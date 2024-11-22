@@ -1,0 +1,17 @@
+{
+    "1": {
+        "time": 120.5,
+        "most_frequent_ngram": ["the", "quick", "brown", "fox"],
+        "ngram_count": 15
+    },
+    "2": {
+        "time": 65.2,
+        "most_frequent_ngram": ["the", "quick", "brown", "fox"],
+        "ngram_count": 14
+    },
+    "4": {
+        "time": 33.8,
+        "most_frequent_ngram": ["quick", "brown", "fox", "jumps"],
+        "ngram_count": 10
+    }
+}
