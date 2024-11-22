@@ -1,0 +1,4 @@
+Hello from the process of number 3 out of 4 processes.
+Hello from the process of number 1 out of 4 processes.
+Hello from the process of number 0 out of 4 processes.
+Hello from the process of number 2 out of 4 processes.
