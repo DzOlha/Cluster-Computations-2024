@@ -15,7 +15,6 @@ def execution_time_for_params(granularity, broadcast_rate, num_processes):
     This will call the `parallel_text_processing` method for each combination.
     """
     # Placeholder for calling parallel processing function
-    # Replace this with actual call to your parallel processing method
     execution_time = parallel_text_processing(granularity, broadcast_rate)
     return execution_time
 
