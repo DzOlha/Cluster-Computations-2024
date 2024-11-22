@@ -198,12 +198,12 @@ def parallel_text_processing(_granularity, _broadcast_rate):
 
         # If granularity threshold reached, gather and merge results
         if count >= _granularity:
-            dic_joint = gather_and_merge_results(dic_joint, update_dic, comm, rank, size, _broadcast_rate, broadcast_count)
+            dic_joint, broadcast_count = gather_and_merge_results(dic_joint, update_dic, comm, rank, size, _broadcast_rate, broadcast_count)
             count = 0
             update_dic = {}
 
     # Final merge for remaining results
-    dic_joint = gather_and_merge_results(dic_joint, update_dic, comm, rank, size, _broadcast_rate, broadcast_count)
+    dic_joint, broadcast_count = gather_and_merge_results(dic_joint, update_dic, comm, rank, size, _broadcast_rate, broadcast_count)
 
     # Filter out low-frequency words on rank 0
     if rank == 0:
@@ -235,7 +235,7 @@ def gather_and_merge_results(dic_joint, update_dic, comm, rank, size, broadcast_
             print("Broadcasting merged dictionary")
 
     broadcast_count = (broadcast_count + 1) % broadcast_rate
-    return dic_joint
+    return dic_joint, broadcast_count
 
 
 # --- Gathering Files to Process (Rank 0) ---
