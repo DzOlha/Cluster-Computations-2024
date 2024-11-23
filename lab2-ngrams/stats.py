@@ -108,7 +108,7 @@ def main():
         # Calculate speedup
         time_taken = max(times)
         if size == 1:
-            save_results(size, time_taken, most_frequent_ngram, ngram_count)
+            save_results(size, time_taken, most_frequent_ngram, ngram_count, 1)
         else:
             with open(RESULTS_FILE, "r") as f:
                 results = json.load(f)
