@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import json
+import os
 import numpy as np
 
 # Constants
@@ -59,6 +60,11 @@ for g in granularity_labels:
 
 # Add a legend for the granularity
 plt.legend(title="Granularity")
+
+# Save the plot to a file
+plot_file_path = os.path.join(os.path.dirname(__file__), "scaling_results.png")
+plt.savefig(plot_file_path)
+print(f"Scaling plot saved to {plot_file_path}")
 
 # Show the plot
 plt.show()
