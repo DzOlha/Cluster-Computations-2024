@@ -1,19 +1,14 @@
 import matplotlib.pyplot as plt
 import json
 import os
-import numpy as np
-
-# Constants
-MIN_PROCESSES = 1
-MAX_PROCESSES = 10
-MIN_GRANULARITY = 1
-MAX_GRANULARITY = 20
-MIN_BROADCAST_RATE = 1
-MAX_BROADCAST_RATE = 50
 
 # Load data from the results.json file
 with open('results.json', 'r') as file:
     data = json.load(file)
+
+# Sort the data by time
+sorted_keys = sorted(data.keys(), key=lambda k: data[k]['time'])
+print('BEST: processes = ' + str(data[sorted_keys[0]]['processes']) + ", " + 'granularity = ' + str(data[sorted_keys[0]]['granularity']) + ", " + 'broadcast_rate = ' + str(data[sorted_keys[0]]['broadcast_rate']))
 
 # Extract the values from the JSON data
 processes = []
@@ -22,6 +17,7 @@ broadcast_rate = []
 time = []
 
 # Iterate over the data and extract the values
+
 for key in data:
     processes.append(data[key]['processes'])
     granularity.append(data[key]['granularity'])
@@ -29,7 +25,7 @@ for key in data:
     time.append(data[key]['time'])
 
 # Create the scatter plot
-plt.figure(figsize=(10, 6))
+plt.figure(figsize=(6, 5))
 
 # Use time for the y-axis, and granularity for the size of the points
 scatter = plt.scatter(processes,
@@ -41,9 +37,10 @@ scatter = plt.scatter(processes,
                       alpha=0.7)
 
 # Add labels and title
+plt.xticks(range(1,5))
 plt.xlabel('Number of Processes')
 plt.ylabel('Time')
-plt.title('Scatter Plot of Time Dependency on Processes, Granularity, and Broadcast Rate')
+plt.title('Time Dependency')
 
 # Add a color bar for broadcast rate
 cbar = plt.colorbar(scatter)

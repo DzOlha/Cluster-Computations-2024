@@ -3,6 +3,10 @@ import re
 import time
 from mpi4py import MPI
 import argparse
+import json
+
+#File for saving the results of program execution to build summary plots later
+RESULTS_FILE = os.path.join(os.path.dirname(__file__), "results.json")
 
 
 # --- Parsing Command-Line Arguments ---
@@ -10,6 +14,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='Parallel texts processing app')
     parser.add_argument('--gran', action="store", dest='granularity', default=1)
     parser.add_argument('--bcast_rate', action="store", dest='broadcast_rate', default=1)
+    parser.add_argument('--monte_index', action="store", dest='monte_index', default=1)
     return parser.parse_args()
 
 
@@ -60,17 +65,38 @@ def filter_words(dic_joint, min_word_count=5):
     return {word: count for word, count in dic_joint.items() if count >= min_word_count}
 
 
+def save_results(monte_index, num_processes, gr, br, time_taken):
+    # Upload existing results
+    if os.path.exists(RESULTS_FILE) and os.path.getsize(RESULTS_FILE) > 0:
+        with open(RESULTS_FILE, "r") as f:
+            try:
+                results = json.load(f)
+            except json.JSONDecodeError:
+                print(f"Error decoding JSON in {RESULTS_FILE}, starting with an empty dictionary.")
+                results = {}
+    else:
+        results = {}
+
+    results[str(monte_index)] = {
+        "time": time_taken,
+        "processes": num_processes,
+        "granularity": gr,
+        "broadcast_rate": br
+    }
+
+    with open(RESULTS_FILE, "w") as f:
+        json.dump(results, f, indent=4)
+
+
 # --- Main Parallel Text Processing Function ---
 def parallel_text_processing():
     # Parse arguments
     args = parse_arguments()
 
     min_word_count = 5
-    granularity = args.granularity
-    broadcast_rate = args.broadcast_rate
-
-    print("granularity =", granularity)
-    print("broadcast_rate =", broadcast_rate)
+    granularity = int(args.granularity)
+    broadcast_rate = int(args.broadcast_rate)
+    monteindex = int(args.monte_index)
 
     # Initialize MPI
     comm = MPI.COMM_WORLD
@@ -83,17 +109,18 @@ def parallel_text_processing():
     count = 0
     broadcast_count = 0
 
+
     if rank == 0:
-        path1 = "../../wiki_dataset_statistics/data/1of2"
-        path2 = "../../wiki_dataset_statistics/data/2of2"
-        path3 = "../../wiki_dataset_statistics/data/fullEnglish"
-        files1 = [os.path.join(path1, f) for f in os.listdir(path1) if os.path.isfile(os.path.join(path1, f))]
-        files2 = [os.path.join(path2, f) for f in os.listdir(path2) if os.path.isfile(os.path.join(path2, f))]
+        print("granularity =", granularity)
+        print("broadcast_rate =", broadcast_rate)
+        print("processes =", size)
+        print("monte_index =", monteindex)
+
+        path3 = "../dataset"
         files3 = list_files_walk(path3)
-        files = files1 + files2 + files3
 
         # Divide files across processes
-        files_per_process = divide_files_among_processes(files, size)
+        files_per_process = divide_files_among_processes(files3, size)
     else:
         files_per_process = None
 
@@ -146,9 +173,11 @@ def parallel_text_processing():
 
         print("Final dictionary length:", len(dic_joint))
 
+        exec_time = time.time() - start_time
         # Print processing time
-        print(f"Processing time for rank {rank}: {time.time() - start_time} seconds")
+        print(f"Processing time: {exec_time} seconds")
 
+        save_results(monteindex, size, granularity, broadcast_rate, exec_time)
 
 if __name__ == "__main__":
     parallel_text_processing()

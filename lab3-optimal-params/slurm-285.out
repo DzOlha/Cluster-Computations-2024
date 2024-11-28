@@ -1,0 +1,12 @@
+NPROCS: 3
+granularity = 7
+broadcast_rate = 1
+processes = 3
+monte_index = 12
+Data load took:  2.1457672119140625e-06
+Final dictionary length: 54315
+Processing time: 7.74000096321106 seconds
+
+real	0m9.700s
+user	0m16.747s
+sys	0m1.279s

@@ -1,0 +1,29 @@
+NPROCS: 1
+Count of files assigned to the 0 process: 20
+File ../dataset/wiki_11 has been processed
+File ../dataset/wiki_07 has been processed
+File ../dataset/wiki_14 has been processed
+File ../dataset/wiki_15 has been processed
+File ../dataset/wiki_19 has been processed
+File ../dataset/wiki_02 has been processed
+File ../dataset/wiki_10 has been processed
+File ../dataset/wiki_13 has been processed
+File ../dataset/wiki_08 has been processed
+File ../dataset/wiki_16 has been processed
+File ../dataset/wiki_03 has been processed
+File ../dataset/wiki_12 has been processed
+File ../dataset/wiki_05 has been processed
+File ../dataset/wiki_09 has been processed
+File ../dataset/wiki_06 has been processed
+File ../dataset/wiki_01 has been processed
+File ../dataset/wiki_00 has been processed
+File ../dataset/wiki_17 has been processed
+File ../dataset/wiki_18 has been processed
+File ../dataset/wiki_04 has been processed
+Dictionary saved to ngram_dictionary.txt in readable format
+Total n-grams dictionary size: 8701
+Most frequent n-gram: ('under', 'the', 'age', 'of'), Count: 467
+
+real	0m18.774s
+user	0m14.398s
+sys	0m2.572s

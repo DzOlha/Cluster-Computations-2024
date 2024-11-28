@@ -1,5 +1,3 @@
 .venv
 .idea/
-/lab2-ngrams/scaling_results.png
-/lab3-optimal-params/results.json
-/lab3-optimal-params/scaling_results.png
+/dataset/

@@ -1,20 +1,46 @@
 {
     "1": {
-        "time": 120.5,
-        "most_frequent_ngram": ["the", "quick", "brown", "fox"],
-        "ngram_count": 15,
-        "speedup": 2.5
+        "time": 15.0029878616333,
+        "most_frequent_ngram": [
+            "under",
+            "the",
+            "age",
+            "of"
+        ],
+        "ngram_count": 467,
+        "speedup": 1
     },
     "2": {
-        "time": 65.2,
-        "most_frequent_ngram": ["the", "quick", "brown", "fox"],
-        "ngram_count": 14,
-        "speedup": 5
+        "time": 9.727158784866333,
+        "most_frequent_ngram": [
+            "under",
+            "the",
+            "age",
+            "of"
+        ],
+        "ngram_count": 467,
+        "speedup": 1.5423813051119497
+    },
+    "3": {
+        "time": 9.01758599281311,
+        "most_frequent_ngram": [
+            "under",
+            "the",
+            "age",
+            "of"
+        ],
+        "ngram_count": 467,
+        "speedup": 1.6637476896356156
     },
     "4": {
-        "time": 33.8,
-        "most_frequent_ngram": ["quick", "brown", "fox", "jumps"],
-        "ngram_count": 10,
-        "speedup": 8
+        "time": 7.291844129562378,
+        "most_frequent_ngram": [
+            "under",
+            "the",
+            "age",
+            "of"
+        ],
+        "ngram_count": 467,
+        "speedup": 2.05750254600323
     }
 }

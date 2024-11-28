@@ -1,0 +1,116 @@
+{
+    "2": {
+        "time": 11.4131600856781,
+        "processes": 2,
+        "granularity": 4,
+        "broadcast_rate": 3
+    },
+    "1": {
+        "time": 18.29361057281494,
+        "processes": 1,
+        "granularity": 16,
+        "broadcast_rate": 4
+    },
+    "3": {
+        "time": 16.16018271446228,
+        "processes": 1,
+        "granularity": 13,
+        "broadcast_rate": 1
+    },
+    "6": {
+        "time": 9.321300983428955,
+        "processes": 2,
+        "granularity": 12,
+        "broadcast_rate": 3
+    },
+    "4": {
+        "time": 6.414125442504883,
+        "processes": 4,
+        "granularity": 7,
+        "broadcast_rate": 5
+    },
+    "5": {
+        "time": 9.01428508758545,
+        "processes": 4,
+        "granularity": 17,
+        "broadcast_rate": 2
+    },
+    "7": {
+        "time": 11.30846905708313,
+        "processes": 4,
+        "granularity": 4,
+        "broadcast_rate": 4
+    },
+    "9": {
+        "time": 15.935971736907959,
+        "processes": 2,
+        "granularity": 12,
+        "broadcast_rate": 4
+    },
+    "8": {
+        "time": 27.544874906539917,
+        "processes": 1,
+        "granularity": 7,
+        "broadcast_rate": 2
+    },
+    "10": {
+        "time": 10.988632202148438,
+        "processes": 4,
+        "granularity": 10,
+        "broadcast_rate": 5
+    },
+    "11": {
+        "time": 16.500981092453003,
+        "processes": 1,
+        "granularity": 3,
+        "broadcast_rate": 2
+    },
+    "12": {
+        "time": 7.74000096321106,
+        "processes": 3,
+        "granularity": 7,
+        "broadcast_rate": 1
+    },
+    "13": {
+        "time": 13.918488502502441,
+        "processes": 2,
+        "granularity": 14,
+        "broadcast_rate": 3
+    },
+    "17": {
+        "time": 21.01589798927307,
+        "processes": 1,
+        "granularity": 10,
+        "broadcast_rate": 1
+    },
+    "14": {
+        "time": 8.225927591323853,
+        "processes": 3,
+        "granularity": 8,
+        "broadcast_rate": 3
+    },
+    "15": {
+        "time": 8.381733894348145,
+        "processes": 4,
+        "granularity": 15,
+        "broadcast_rate": 1
+    },
+    "16": {
+        "time": 8.764401197433472,
+        "processes": 4,
+        "granularity": 9,
+        "broadcast_rate": 4
+    },
+    "20": {
+        "time": 11.72370195388794,
+        "processes": 2,
+        "granularity": 19,
+        "broadcast_rate": 1
+    },
+    "18": {
+        "time": 18.909746408462524,
+        "processes": 1,
+        "granularity": 6,
+        "broadcast_rate": 1
+    }
+}

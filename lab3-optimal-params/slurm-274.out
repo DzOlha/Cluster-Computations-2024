@@ -1,0 +1,15 @@
+NPROCS: 1
+granularity = 16
+broadcast_rate = 4
+processes = 1
+monte_index = 1
+Data load took:  2.384185791015625e-06
+Rank 0 - Update: 98249 Local: 98249
+Broadcasting dic_joint
+Merging dictionaries took: 0.6281845569610596 seconds
+Final dictionary length: 92649
+Processing time: 18.29361057281494 seconds
+
+real	0m20.783s
+user	0m15.118s
+sys	0m0.912s
